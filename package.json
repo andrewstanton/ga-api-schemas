@@ -1,0 +1,15 @@
+{
+  "name": "ga-api-schemas",
+  "version": "1.0.0",
+  "description": "This repo just simply contains a concept of what the schemas for the GA Admin API might look like",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mongoose": "^6.0.12"
+  }
+}
