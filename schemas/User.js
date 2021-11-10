@@ -1,31 +1,20 @@
 const mongoose = require("mongoose");
 
 const UserSchema = new mongoose.Schema({
-  name: {
+  // _id: ObjectID
+  role_id: {
+    type: mongoose.Schema.Types.ObjectId,
+  },
+  active: {
+    type: Boolean,
+    required: true,
+    default: true,
+  },
+  first_name: {
     type: String,
     required: true,
   },
-  restaurant_name: {
-    type: String,
-    required: true,
-  },
-  address: {
-    type: String,
-    required: true,
-  },
-  city: {
-    type: String,
-    required: true,
-  },
-  state: {
-    type: String,
-    required: true,
-  },
-  zip: {
-    type: String,
-    required: true,
-  },
-  phone: {
+  last_name: {
     type: String,
     required: true,
   },
@@ -33,40 +22,13 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  stripe_id: {
+  photo: {
     type: String,
-    required: true,
   },
-  charge_amount: {
-    type: String,
-    required: true,
-  },
-  website: String,
-  social_media: String,
-  num_110: {
-    type: Boolean,
-    default: false,
-  },
-  num_110_plugs: String,
-  total_amps_110: String,
-  num_220: {
-    type: Boolean,
-    default: false,
-  },
-  num_220_plugs: String,
-  total_amps_220: String,
-  restaurant_equipment: String,
-  trailer_size: String,
-  trailer_type: String,
-  menu_items: String,
-  signature: {
-    type: String,
-    required: true,
-  },
-  active: {
-    type: Boolean,
-    default: true,
-  },
+  // ---or---
+  // uploadID: {
+  //  type: type: mongoose.Schema.Types.ObjectId,
+  // }
   created_at: {
     type: Date,
     default: Date.now,

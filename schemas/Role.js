@@ -1,72 +1,57 @@
 const mongoose = require("mongoose");
 
 const RoleSchema = new mongoose.Schema({
+  // _id: ObjectID
   name: {
-    type: String,
-    required: true,
-  },
-  restaurant_name: {
-    type: String,
-    required: true,
-  },
-  address: {
-    type: String,
-    required: true,
-  },
-  city: {
-    type: String,
-    required: true,
-  },
-  state: {
-    type: String,
-    required: true,
-  },
-  zip: {
-    type: String,
-    required: true,
-  },
-  phone: {
-    type: String,
-    required: true,
-  },
-  email: {
-    type: String,
-    required: true,
-  },
-  stripe_id: {
-    type: String,
-    required: true,
-  },
-  charge_amount: {
-    type: String,
-    required: true,
-  },
-  website: String,
-  social_media: String,
-  num_110: {
-    type: Boolean,
-    default: false,
-  },
-  num_110_plugs: String,
-  total_amps_110: String,
-  num_220: {
-    type: Boolean,
-    default: false,
-  },
-  num_220_plugs: String,
-  total_amps_220: String,
-  restaurant_equipment: String,
-  trailer_size: String,
-  trailer_type: String,
-  menu_items: String,
-  signature: {
     type: String,
     required: true,
   },
   active: {
     type: Boolean,
+    required: true,
     default: true,
   },
+
+  // Permissions
+  announcment_permission: {
+    type: Boolean,
+    default: false,
+  },
+  db_access_permission: {
+    type: Boolean,
+    default: false,
+  },
+  knowledge_base_permission: {
+    type: Boolean,
+    default: false,
+  },
+  tickets_permission: {
+    type: Boolean,
+    default: false,
+  },
+  user_roles_permission: {
+    type: Boolean,
+    default: false,
+  },
+  db_copy_permission: {
+    type: Boolean,
+    default: false,
+  },
+  logs_permission: {
+    type: Boolean,
+    default: false,
+  },
+  email_trace_permission: {
+    type: Boolean,
+    default: false,
+  },
+  // End Of Permissions
+
+  predefined: {
+    type: Boolean,
+    default: false,
+  },
+
   created_at: {
     type: Date,
     default: Date.now,
